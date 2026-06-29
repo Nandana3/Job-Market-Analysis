@@ -1,10 +1,10 @@
 # Bangalore Analyst Job Market Tracker
 
-A data investigation into why qualified freshers struggle to get hired in Bangalore's analyst job market: built end-to-end from data collection through a published case study and interactive Power BI dashboard.
+A data investigation into why qualified freshers struggle to get hired in Bangalore's analyst job market — built end-to-end from data collection through a published case study and interactive Power BI dashboard.
 
 **Case Study:** [Why Are Qualified Freshers Not Getting Hired?](case_study/case_study_v3.md)
 **Published on Medium:** [add link after publishing]
-**Power BI Dashboard:** `powerbi/job_market_dashboard.pbix`
+**Power BI Dashboard:** `Analysis_Dashboard.pbix`
 
 ---
 
@@ -19,11 +19,11 @@ A data investigation into why qualified freshers struggle to get hired in Bangal
 | Postings signaling entry-level intent | **23 (5.2%)** |
 
 **Key findings:**
-- Postings labeled "entry-level" don't reliably demand entry-level skill sets - 15.8% of them still ask for 5+ distinct skills
-- SQL and Advanced Excel are each requested in 31.2% of postings individually, but only 15.2% require both together - common skills rarely overlap into specific combinations
+- Postings labeled "entry-level" don't reliably demand entry-level skill sets — 15.8% of them still ask for 5+ distinct skills
+- SQL and Advanced Excel are each requested in 31.2% of postings individually, but only 15.2% require both together — common skills rarely overlap into specific combinations
 - "MIS Analyst" as a standalone job title has nearly vanished (0.5% of postings); Business Analyst dominates demand (31.0%)
 - The skill bundle itself changes by role: Operations Analyst is Excel + BFSI-domain heavy (avg 2.7 skills), while Data Analyst is SQL/Python/Power BI-heavy and broader (avg 4.7 skills)
-- Hiring demand is broad-based - 232 companies, with the top 10 accounting for only 21.5% of total postings
+- Hiring demand is broad-based — 232 companies, with the top 10 accounting for only 21.5% of total postings
 
 Full reasoning, methodology, and limitations are in the [case study](case_study/case_study_v3.md).
 
@@ -32,7 +32,7 @@ Full reasoning, methodology, and limitations are in the [case study](case_study/
 ## Project Structure
 
 ```
-job_market_tracker/
+Job-Market-Analysis/
 │
 ├── data/
 │   └── job_market.db              ← SQLite database (auto-created)
@@ -57,9 +57,9 @@ job_market_tracker/
 │   └── visuals/                   ← Chart PNGs (one per finding)
 │
 ├── powerbi/
-│   ├── load_data.py                ← Python script Power BI uses to load pre-filtered data
-│   └── job_market_dashboard.pbix   ← 4-page interactive dashboard
+│   └── load_data.py                ← Python script Power BI uses to load pre-filtered data
 │
+├── Analysis_Dashboard.pbix         ← 4-page interactive Power BI dashboard
 ├── database_setup.py               ← Run once to create the database schema
 └── README.md
 ```
@@ -70,8 +70,8 @@ job_market_tracker/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/Nandana3/job-market-tracker
-cd job_market_tracker
+git clone https://github.com/Nandana3/Job-Market-Analysis.git
+cd Job-Market-Analysis
 
 # 2. Install dependencies
 pip install requests beautifulsoup4 pandas matplotlib --break-system-packages
@@ -114,7 +114,7 @@ python case_study/generate_charts.py
 
 ## Power BI Dashboard
 
-1. Open `powerbi/job_market_dashboard.pbix` in Power BI Desktop
+1. Open `Analysis_Dashboard.pbix` in Power BI Desktop
 2. If prompted to refresh, ensure Python scripting is configured (File → Options → Python scripting) with `pandas` installed in that environment
 3. The dashboard auto-loads from `data/job_market.db` via `powerbi/load_data.py`, pre-filtered to the same 442 validated postings used in the case study
 
@@ -139,7 +139,7 @@ The project pivoted to the **Adzuna API**, a legitimate, public job-search API c
 
 **Known data limitations**, disclosed in full in the case study:
 - Salary is disclosed in under 3% of postings (consistent with the broader Indian job market)
-- Experience requirements, when stated in free text, are only reliably parseable in ~15% of postings - a title-based entry-level signal is used instead
+- Experience requirements, when stated in free text, are only reliably parseable in ~15% of postings — a title-based entry-level signal is used instead
 - This data covers job postings only; it cannot speak to ATS filtering, recruiter screening, or other post-application factors
 
 ---
