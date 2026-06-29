@@ -3,7 +3,7 @@
 A data investigation into why qualified freshers struggle to get hired in Bangalore's analyst job market — built end-to-end from data collection through a published case study and interactive Power BI dashboard.
 
 **Case Study:** [Why Are Qualified Freshers Not Getting Hired?](case_study/case_study_v3.md)
-**Published on Medium:** [add link after publishing]
+**Published on Medium:** [Why Are Qualified Freshers Not Getting Hired?](https://medium.com/@nandanamk2702/why-are-qualified-freshers-not-getting-hired-22c5bbe8671f)
 **Power BI Dashboard:** `Analysis_Dashboard.pbix`
 
 ---
