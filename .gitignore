@@ -1,0 +1,16 @@
+# Database (regenerable via database_setup.py + collection scripts)
+data/*.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary diagnostic scripts (not part of the final project)
+check_data.py
+
+# Debug screenshots from abandoned Naukri scraper attempts
+debug_page_*.png
